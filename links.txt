@@ -1,0 +1,7 @@
+isim=A Haber
+içerik=https://m.youtube.com/watch?v=nmY9i63t6qo&pp=ygUPYSBoYWJlciBjYW5sxLEg0gcJCR4Bo7VqN5tD
+logo=https://yt3.ggpht.com/3a7gv0YZ9X6kWk_kfffCq3Gdws5g54JntzV1fSHQomWFDb-1mUuJTiCTX4HxUG9SMjqYyBN4guE=s48-c-k-c0x00ffffff-no-rj
+
+isim=Haber Türk
+içerik=https://m.youtube.com/watch?v=RNVNlJSUFoE&pp=ygULSGFiZXIgdMO8cms%3D
+logo=https://yt3.ggpht.com/sgLqVc2LbmFb-r8OMY3Ib5o1MYjFSdY3KHSPYQ6EIjBNYYkgtljQbxEkeQG2zNeNPloQGCJ5=s48-c-k-c0x00ffffff-no-rj
