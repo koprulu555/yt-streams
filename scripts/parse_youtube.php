@@ -32,34 +32,69 @@ function parseLinksTxt($content) {
 }
 
 function getHlsManifestUrl($youtubeUrl) {
-    // Güncellenmiş header bilgileri
-    $options = [
+    $headers = [
+        'User-Agent: Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Mobile Safari/537.36',
+        'Referer: https://www.youtube.com/',
+        'Origin: https://www.youtube.com',
+        'Accept-Language: tr-TR,tr;q=0.9,en-US;q=0.8,en;q=0.7',
+        'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+        'Accept-Encoding: gzip, deflate, br',
+        'Connection: keep-alive',
+        'Upgrade-Insecure-Requests: 1',
+        'Sec-Fetch-Dest: document',
+        'Sec-Fetch-Mode: navigate',
+        'Sec-Fetch-Site: same-origin'
+    ];
+    
+    // Önce proxy ile deneyelim
+    $proxyUrl = "https://api.codetabs.com/v1/proxy/?quest=" . urlencode($youtubeUrl);
+    
+    $contextOptions = [
         'http' => [
-            'header' => [
-                'User-Agent: Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Mobile Safari/537.36',
-                'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
-                'Accept-Language: tr-TR,tr;q=0.9,en-US;q=0.8,en;q=0.7',
-                'Referer: https://www.youtube.com/',
-                'Origin: https://www.youtube.com',
-                'DNT: 1',
-                'Connection: keep-alive',
-                'Upgrade-Insecure-Requests: 1',
-            ],
-            'timeout' => 15
+            'header' => implode("\r\n", $headers),
+            'timeout' => 30,
+            'follow_location' => 1,
+            'ignore_errors' => true
+        ],
+        'ssl' => [
+            'verify_peer' => false,
+            'verify_peer_name' => false
         ]
     ];
     
-    $context = stream_context_create($options);
+    $context = stream_context_create($contextOptions);
     
-    $html = @file_get_contents($youtubeUrl, false, $context);
+    // Proxy üzerinden istek yap
+    $html = @file_get_contents($proxyUrl, false, $context);
+    
     if ($html === false) {
-        return null;
+        echo "  ⚠️ Proxy ile istek başarısız, direkt deneyelim...\n";
+        
+        // Proxy başarısız olursa direkt istek yap
+        $html = @file_get_contents($youtubeUrl, false, $context);
+        
+        if ($html === false) {
+            echo "  ❌ Direkt istek de başarısız\n";
+            return null;
+        }
     }
     
-    // "hlsManifestUrl" pattern'ini ara
-    $pattern = '/"hlsManifestUrl":"(.*?)"/';
-    if (preg_match($pattern, $html, $matches)) {
-        return stripslashes($matches[1]);
+    // Birden fazla pattern deneyelim
+    $patterns = [
+        '/"hlsManifestUrl":"(.*?)"/',
+        '/"hlsManifestUrl":"(.*?[^\\\\])"/',
+        '/hlsManifestUrl":\s*"([^"]+)"/',
+        '/"url":"(https:[^"]+m3u8[^"]*)"/'
+    ];
+    
+    foreach ($patterns as $pattern) {
+        if (preg_match($pattern, $html, $matches)) {
+            $hlsUrl = stripslashes($matches[1]);
+            // URL'de kaçış karakterleri varsa temizle
+            $hlsUrl = str_replace('\\u0026', '&', $hlsUrl);
+            $hlsUrl = str_replace('\\/', '/', $hlsUrl);
+            return $hlsUrl;
+        }
     }
     
     return null;
@@ -88,20 +123,23 @@ try {
     
     // Parse channels
     $channels = parseLinksTxt($linksContent);
+    echo "📡 Toplam " . count($channels) . " kanal bulundu\n";
     
     // Get HLS URLs for each channel
+    $successCount = 0;
     foreach ($channels as &$channel) {
-        echo "Processing: {$channel['name']}\n";
+        echo "🔍 İşleniyor: {$channel['name']}\n";
+        echo "   📺 URL: {$channel['content']}\n";
+        
         $channel['hls_url'] = getHlsManifestUrl($channel['content']);
         
         if ($channel['hls_url']) {
-            echo "✓ HLS URL found for {$channel['name']}\n";
+            echo "   ✅ HLS URL bulundu\n";
+            $successCount++;
         } else {
-            echo "✗ HLS URL not found for {$channel['name']}\n";
+            echo "   ❌ HLS URL bulunamadı\n";
         }
-        
-        // YouTube'nun rate limiting'inden kaçınmak için kısa bir bekleme
-        sleep(1);
+        echo "\n";
     }
     
     // Generate M3U content
@@ -113,8 +151,9 @@ try {
         throw new Exception('youtube.m3u dosyası yazılamadı');
     }
     
+    echo "🎉 İşlem tamamlandı!\n";
     echo "✅ youtube.m3u dosyası başarıyla oluşturuldu\n";
-    echo "📊 Toplam kanal: " . count($channels) . ", başarılı: " . count(array_filter($channels, function($ch) { return !empty($ch['hls_url']); })) . "\n";
+    echo "📊 Sonuç: {$successCount}/" . count($channels) . " kanal başarılı\n";
     
 } catch (Exception $e) {
     echo "❌ Hata: " . $e->getMessage() . "\n";
