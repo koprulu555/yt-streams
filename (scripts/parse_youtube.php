@@ -1,0 +1,123 @@
+<?php
+
+function parseLinksTxt($content) {
+    $channels = [];
+    $lines = explode("\n", $content);
+    $currentChannel = [];
+    
+    foreach ($lines as $line) {
+        $line = trim($line);
+        if (empty($line)) {
+            if (!empty($currentChannel)) {
+                $channels[] = $currentChannel;
+                $currentChannel = [];
+            }
+            continue;
+        }
+        
+        if (strpos($line, 'isim=') === 0) {
+            $currentChannel['name'] = substr($line, 5);
+        } elseif (strpos($line, 'içerik=') === 0) {
+            $currentChannel['content'] = substr($line, 7);
+        } elseif (strpos($line, 'logo=') === 0) {
+            $currentChannel['logo'] = substr($line, 5);
+        }
+    }
+    
+    if (!empty($currentChannel)) {
+        $channels[] = $currentChannel;
+    }
+    
+    return $channels;
+}
+
+function getHlsManifestUrl($youtubeUrl) {
+    // Güncellenmiş header bilgileri
+    $options = [
+        'http' => [
+            'header' => [
+                'User-Agent: Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Mobile Safari/537.36',
+                'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+                'Accept-Language: tr-TR,tr;q=0.9,en-US;q=0.8,en;q=0.7',
+                'Referer: https://www.youtube.com/',
+                'Origin: https://www.youtube.com',
+                'DNT: 1',
+                'Connection: keep-alive',
+                'Upgrade-Insecure-Requests: 1',
+            ],
+            'timeout' => 15
+        ]
+    ];
+    
+    $context = stream_context_create($options);
+    
+    $html = @file_get_contents($youtubeUrl, false, $context);
+    if ($html === false) {
+        return null;
+    }
+    
+    // "hlsManifestUrl" pattern'ini ara
+    $pattern = '/"hlsManifestUrl":"(.*?)"/';
+    if (preg_match($pattern, $html, $matches)) {
+        return stripslashes($matches[1]);
+    }
+    
+    return null;
+}
+
+function generateM3UContent($channels) {
+    $m3uContent = "#EXTM3U\n";
+    
+    foreach ($channels as $channel) {
+        if (!empty($channel['hls_url'])) {
+            $m3uContent .= "#EXTINF:-1 tvg-id=\"{$channel['name']}\" tvg-name=\"{$channel['name']}\" tvg-logo=\"{$channel['logo']}\" group-title=\"YouTube\",{$channel['name']}\n";
+            $m3uContent .= $channel['hls_url'] . "\n";
+        }
+    }
+    
+    return $m3uContent;
+}
+
+// Main execution
+try {
+    // Read links.txt
+    $linksContent = file_get_contents('links.txt');
+    if ($linksContent === false) {
+        throw new Exception('links.txt dosyası bulunamadı veya okunamadı');
+    }
+    
+    // Parse channels
+    $channels = parseLinksTxt($linksContent);
+    
+    // Get HLS URLs for each channel
+    foreach ($channels as &$channel) {
+        echo "Processing: {$channel['name']}\n";
+        $channel['hls_url'] = getHlsManifestUrl($channel['content']);
+        
+        if ($channel['hls_url']) {
+            echo "✓ HLS URL found for {$channel['name']}\n";
+        } else {
+            echo "✗ HLS URL not found for {$channel['name']}\n";
+        }
+        
+        // YouTube'nun rate limiting'inden kaçınmak için kısa bir bekleme
+        sleep(1);
+    }
+    
+    // Generate M3U content
+    $m3uContent = generateM3UContent($channels);
+    
+    // Write to youtube.m3u
+    $result = file_put_contents('youtube.m3u', $m3uContent);
+    if ($result === false) {
+        throw new Exception('youtube.m3u dosyası yazılamadı');
+    }
+    
+    echo "✅ youtube.m3u dosyası başarıyla oluşturuldu\n";
+    echo "📊 Toplam kanal: " . count($channels) . ", başarılı: " . count(array_filter($channels, function($ch) { return !empty($ch['hls_url']); })) . "\n";
+    
+} catch (Exception $e) {
+    echo "❌ Hata: " . $e->getMessage() . "\n";
+    exit(1);
+}
+?>
