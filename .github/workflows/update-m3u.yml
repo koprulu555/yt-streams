@@ -2,18 +2,18 @@ name: YouTube M3U Güncelleme
 
 on:
   schedule:
-    - cron: '0 * * * *'  # Her saat başı
-  workflow_dispatch:       # Manuel çalıştırma
+    - cron: '0 * * * *'
+  workflow_dispatch:
 
 jobs:
   update-m3u:
     runs-on: ubuntu-latest
     
     steps:
-    - name: Repository'yi al
+    - name: Repository'yi indir
       uses: actions/checkout@v4
       
-    - name: Python kur
+    - name: Python kurulumu
       uses: actions/setup-python@v4
       with:
         python-version: '3.10'
@@ -22,13 +22,13 @@ jobs:
       run: |
         pip install yt-dlp requests
         
-    - name: Python scripti çalıştır
-      run: python scripts/youtube_parser.py
+    - name: YouTube M3U scriptini çalıştır
+      run: python youtube_m3u_generator.py
       
-    - name: Değişiklikleri kaydet
+    - name: Değişiklikleri kaydet ve gönder
       run: |
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
         git add youtube.m3u
-        git diff --staged --quiet || git commit -m "M3U güncellendi - $(date +'%Y-%m-%d %H:%M')"
+        git diff --staged --quiet || git commit -m "YouTube M3U güncellendi - $(date +'%Y-%m-%d %H:%M')"
         git push
