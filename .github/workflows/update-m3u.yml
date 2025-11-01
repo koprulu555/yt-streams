@@ -22,8 +22,16 @@ jobs:
       run: |
         pip install yt-dlp requests
         
+    - name: Dosya yapısını kontrol et
+      run: |
+        pwd
+        ls -la
+        echo "=== Mevcut dosyalar ==="
+        find . -name "*.py" -o -name "*.txt" | head -20
+        
     - name: YouTube M3U scriptini çalıştır
-      run: python youtube_m3u_generator.py
+      run: |
+        python youtube_m3u_generator.py
       
     - name: Değişiklikleri kaydet ve gönder
       run: |
