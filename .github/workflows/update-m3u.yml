@@ -20,18 +20,28 @@ jobs:
         
     - name: Gerekli kütüphaneleri yükle
       run: |
-        pip install yt-dlp requests
-        
-    - name: Dosya yapısını kontrol et
-      run: |
-        pwd
-        ls -la
-        echo "=== Mevcut dosyalar ==="
-        find . -name "*.py" -o -name "*.txt" | head -20
+        pip install requests
         
     - name: YouTube M3U scriptini çalıştır
+      run: python youtube_m3u_generator.py
+      
+    - name: Debug dosyasını kontrol et
       run: |
-        python youtube_m3u_generator.py
+        if [ -f debug_html.txt ]; then
+          echo "=== DEBUG HTML İÇERİĞİ ==="
+          head -n 10 debug_html.txt
+        else
+          echo "Debug dosyası oluşturulmamış"
+        fi
+      
+    - name: M3U dosyasını kontrol et
+      run: |
+        if [ -f youtube.m3u ]; then
+          echo "=== M3U İÇERİĞİ ==="
+          cat youtube.m3u
+        else
+          echo "M3U dosyası oluşturulmamış"
+        fi
       
     - name: Değişiklikleri kaydet ve gönder
       run: |
