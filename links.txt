@@ -14,9 +14,11 @@ isim=24 Haber
 içerik=https://m.youtube.com/watch?v=6B-nPOdP720
 logo=https://yt3.ggpht.com/gWxG3v8R74BMB5GWgX0v9HoFKmKLtTl533CgLfoHcRfRXQPTTcAYgvrnplkwqOmq4GZnmOLkbw=s48-c-k-c0x00ffffff-no-rj
 
-isim=EDHO
-içerik=https://m.youtube.com/watch?v=F0yeYa-SSDc&pp=ygUiRcWfa2l5YSBkw7xueWF5YSBow7xrw7xtZGFyIG9sbWF6IA%3D%3D
-logo=https://yt3.ggpht.com/TxAX1j0TdUlpfhmsbkCqtdFrM3AFV2DZGb6kef8TH80oOMDFEz2J2id5-SiWtDTcpH2mZhYGTg=s48-c-k-c0x00ffffff-no-rj
+isim=Atv
+içerik=https://m.youtube.com/watch?v=70KUEKUEV2E&pp=ygULQXR2IGNhbmzEsSDSBwkJHgGjtWo3m0M%3D
+logo=https://yt3.ggpht.com/rGaatci_rjFWnwKiycOnIolZYkXz8SeTNVMz4G_45i_flLh_toDIBKT6ctxlDH8b7vqW4Cc_-XY=s48-c-k-c0x00ffffff-no-rj
+
+
 
 
 
