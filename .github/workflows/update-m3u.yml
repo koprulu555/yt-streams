@@ -32,37 +32,3 @@ jobs:
         git add youtube.m3u
         git diff --staged --quiet || git commit -m "YouTube M3U güncellendi - $(date +'%Y-%m-%d %H:%M') # FIX"
         git push
-name: Update YouTube M3U
-
-on:
-  schedule:
-    - cron: '*/30 * * * *'  # Her 30 dakikada bir
-  workflow_dispatch:
-
-jobs:
-  update-m3u:
-    runs-on: ubuntu-latest
-    
-    steps:
-    - name: Repository'yi indir
-      uses: actions/checkout@v4
-      
-    - name: Python kurulumu
-      uses: actions/setup-python@v4
-      with:
-        python-version: '3.10'
-        
-    - name: yt-dlp kütüphanesini yükle
-      run: |
-        pip install yt-dlp
-        
-    - name: YouTube M3U scriptini çalıştır (PROXY'SIZ)
-      run: python youtube_m3u_generator.py
-      
-    - name: Değişiklikleri kaydet ve gönder
-      run: |
-        git config --local user.email "action@github.com"
-        git config --local user.name "GitHub Action"
-        git add youtube.m3u
-        git diff --staged --quiet || git commit -m "YouTube M3U güncellendi (Proxy'siz) - $(date +'%Y-%m-%d %H:%M')"
-        git push
