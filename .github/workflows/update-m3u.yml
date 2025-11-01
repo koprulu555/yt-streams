@@ -1,9 +1,9 @@
-name: Update YouTube M3U
+name: YouTube M3U Güncelleme
 
 on:
   schedule:
-    - cron: '*/30 * * * *'  # Her 30 dakikada bir
-  workflow_dispatch:         # ✅ MANUEL ÇALIŞTIRMA AKTİF
+    - cron: '0 * * * *'
+  workflow_dispatch:
 
 jobs:
   update-m3u:
@@ -24,6 +24,24 @@ jobs:
         
     - name: YouTube M3U scriptini çalıştır
       run: python youtube_m3u_generator.py
+      
+    - name: Debug dosyasını kontrol et
+      run: |
+        if [ -f debug_html.txt ]; then
+          echo "=== DEBUG HTML İÇERİĞİ ==="
+          head -n 10 debug_html.txt
+        else
+          echo "Debug dosyası oluşturulmamış"
+        fi
+      
+    - name: M3U dosyasını kontrol et
+      run: |
+        if [ -f youtube.m3u ]; then
+          echo "=== M3U İÇERİĞİ ==="
+          cat youtube.m3u
+        else
+          echo "M3U dosyası oluşturulmamış"
+        fi
       
     - name: Değişiklikleri kaydet ve gönder
       run: |
