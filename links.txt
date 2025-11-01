@@ -9,3 +9,9 @@ logo=https://yt3.ggpht.com/sgLqVc2LbmFb-r8OMY3Ib5o1MYjFSdY3KHSPYQ6EIjBNYYkgtljQb
 isim=Cnn Türk
 içerik=https://m.youtube.com/watch?v=6N8_r2uwLEc&pp=ygUXQ2FubMSxIGhhYmVyIGthbmFsbGFyxLE%3D
 logo=https://yt3.ggpht.com/H6Fh64z_Vb9AYevqCPwgeyRAyd4mye6fqU2HN5Jj1RWtrtK5lbU3B2Nkxc_nJfpN_WpI5_flfBk=s48-c-k-c0x00ffffff-no-rj
+
+isim=24 Haber
+içerik=https://m.youtube.com/watch?v=6B-nPOdP720
+logo=https://yt3.ggpht.com/gWxG3v8R74BMB5GWgX0v9HoFKmKLtTl533CgLfoHcRfRXQPTTcAYgvrnplkwqOmq4GZnmOLkbw=s48-c-k-c0x00ffffff-no-rj
+
+
