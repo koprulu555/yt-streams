@@ -14,9 +14,15 @@ isim=24 Haber
 içerik=https://m.youtube.com/watch?v=6B-nPOdP720
 logo=https://yt3.ggpht.com/gWxG3v8R74BMB5GWgX0v9HoFKmKLtTl533CgLfoHcRfRXQPTTcAYgvrnplkwqOmq4GZnmOLkbw=s48-c-k-c0x00ffffff-no-rj
 
-isim=Atv
-içerik=https://m.youtube.com/watch?v=70KUEKUEV2E&pp=ygULQXR2IGNhbmzEsSDSBwkJHgGjtWo3m0M%3D
-logo=https://yt3.ggpht.com/rGaatci_rjFWnwKiycOnIolZYkXz8SeTNVMz4G_45i_flLh_toDIBKT6ctxlDH8b7vqW4Cc_-XY=s48-c-k-c0x00ffffff-no-rj
+isim=Kurtlar Vadisi Pusu
+içerik=https://m.youtube.com/watch?v=5OIIOVB0R1U&pp=ygUbS3VydGxhciB2YWRpc2kgcHVzdSBjYW5sxLEg
+logo=https://yt3.ggpht.com/tql8fK5S3O4w5ONQcdlOqYkpy_BKAq1wcTt7GilOGf3GpkhdeqIw5f55YI1ZDo_p5_DcoDyB1A=s48-c-k-c0x00ffffff-no-rj
+
+isim=Kurtlar Vadisi
+içerik=https://m.youtube.com/watch?v=-eBbNc-ylYI&pp=ygUbS3VydGxhciB2YWRpc2kgcHVzdSBjYW5sxLEg
+logo=https://yt3.ggpht.com/3pcRtdw7lKM3-d8rPyBn1mET0GTstFOx4EUqswlp4sGVFchaf31GXPcz3AjFgIssfvI-6Mgus-M=s48-c-k-c0x00ffffff-no-rj
+
+
 
 
 
