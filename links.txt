@@ -22,6 +22,15 @@ isim=Kurtlar Vadisi
 içerik=https://m.youtube.com/watch?v=-eBbNc-ylYI&pp=ygUbS3VydGxhciB2YWRpc2kgcHVzdSBjYW5sxLEg
 logo=https://yt3.ggpht.com/3pcRtdw7lKM3-d8rPyBn1mET0GTstFOx4EUqswlp4sGVFchaf31GXPcz3AjFgIssfvI-6Mgus-M=s48-c-k-c0x00ffffff-no-rj
 
+isim=Güldür Güldür Show
+içerik=https://m.youtube.com/watch?v=jNMe50AHZMc&pp=ygUYZ8O8bGTDvHIgZ8O8bGTDvHIgY2FubMSx
+logo=https://yt3.ggpht.com/i2TaaYn_QBW_W0xsJ79qFQ58bw28wKxlopm9Cocq6O_Ws-Z0C84ap3DI3Q5zm-2o22_Pru4YNQ=s48-c-k-c0x00ffffff-no-rj
+
+isim=Ç.G.H 2
+içerik=https://m.youtube.com/watch?v=A2QribUVRyc&pp=ygUYZ8O8bGTDvHIgZ8O8bGTDvHIgY2FubMSx
+logo=https://yt3.ggpht.com/9t3sdfGSLrbjII4g10IJhrDt1N2xtYrFavOGQq2IQSizJYlt6Z1x-COMZvPKJmySl_aU-Mkl=s48-c-k-c0x00ffffff-no-rj
+
+
 
 
 
