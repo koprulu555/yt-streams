@@ -34,6 +34,10 @@ isim=Kurtlar Vadisi
 içerik=https://m.youtube.com/watch?v=-eBbNc-ylYI&pp=ygUbS3VydGxhciB2YWRpc2kgcHVzdSBjYW5sxLEg
 logo=https://yt3.ggpht.com/3pcRtdw7lKM3-d8rPyBn1mET0GTstFOx4EUqswlp4sGVFchaf31GXPcz3AjFgIssfvI-6Mgus-M=s48-c-k-c0x00ffffff-no-rj
 
+isim=E.D.H.O
+içerik=https://m.youtube.com/watch?v=F0yeYa-SSDc&pp=ygUiZcWfa2l5YSBkw7xueWF5YSBow7xrw7xtZGFyIG9sbWF6IA%3D%3D
+logo=https://yt3.ggpht.com/TxAX1j0TdUlpfhmsbkCqtdFrM3AFV2DZGb6kef8TH80oOMDFEz2J2id5-SiWtDTcpH2mZhYGTg=s48-c-k-c0x00ffffff-no-rj
+
 isim=Güldür Güldür Show
 içerik=https://m.youtube.com/watch?v=jNMe50AHZMc&pp=ygUYZ8O8bGTDvHIgZ8O8bGTDvHIgY2FubMSx
 logo=https://yt3.ggpht.com/i2TaaYn_QBW_W0xsJ79qFQ58bw28wKxlopm9Cocq6O_Ws-Z0C84ap3DI3Q5zm-2o22_Pru4YNQ=s48-c-k-c0x00ffffff-no-rj
