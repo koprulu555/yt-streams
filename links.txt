@@ -42,9 +42,11 @@ isim=Güldür Güldür Show
 içerik=https://m.youtube.com/watch?v=jNMe50AHZMc&pp=ygUYZ8O8bGTDvHIgZ8O8bGTDvHIgY2FubMSx
 logo=https://yt3.ggpht.com/i2TaaYn_QBW_W0xsJ79qFQ58bw28wKxlopm9Cocq6O_Ws-Z0C84ap3DI3Q5zm-2o22_Pru4YNQ=s48-c-k-c0x00ffffff-no-rj
 
-isim=Ç.G.H 2
-içerik=https://m.youtube.com/watch?v=A2QribUVRyc&pp=ygUYZ8O8bGTDvHIgZ8O8bGTDvHIgY2FubMSx
-logo=https://yt3.ggpht.com/9t3sdfGSLrbjII4g10IJhrDt1N2xtYrFavOGQq2IQSizJYlt6Z1x-COMZvPKJmySl_aU-Mkl=s48-c-k-c0x00ffffff-no-rj
+isim=Kral Şakir
+içerik=https://m.youtube.com/watch?v=5Whk9MVTpI4&pp=ygUTw4dpemdpIGZpbG0gY2FubMSxIA%3D%3D
+logo=https://yt3.ggpht.com/pdVy_rG78xQRFbsEJjBy2u3BfLE6oSDCKX9BBQBufV2KQVRYM70Tb5PZIB7s1oHdKbR7qPZcvA=s48-c-k-c0x00ffffff-no-rj
+
+
 
 
 
