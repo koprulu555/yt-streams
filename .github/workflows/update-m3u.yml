@@ -2,7 +2,7 @@ name: Update YouTube M3U
 
 on:
   schedule:
-    - cron: '0 */12 * * *'  # Her 12 saatte bir
+    - cron: '0 */6 * * *'  # Her 6 saatte bir
   workflow_dispatch:         # ✅ MANUEL ÇALIŞTIRMA AKTİF
 
 jobs:
