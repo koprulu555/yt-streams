@@ -27,7 +27,7 @@ içerik=https://m.youtube.com/watch?v=ztmY_cCtUl0&pp=ygURc8O2emPDvCB0diBjYW5sxLE
 logo=https://yt3.ggpht.com/_HznzWrS2cMaKa8Jp_uZhzWt7-25ijH7pZlXq45D9vapjDu5DRsh9uu0vfa2NH2Iayw5yxhaDQ=s48-c-k-c0x00ffffff-no-rj
 
 isim=Kurtlar Vadisi Pusu
-içerik=https://m.youtube.com/watch?v=5OIIOVB0R1U&pp=ygUbS3VydGxhciB2YWRpc2kgcHVzdSBjYW5sxLEg
+içerik=https://m.youtube.com/watch?v=Qxz5lwuleNA&pp=ygUba3VydGxhciB2YWRpc2kgcHVzdSBjYW5sxLEg
 logo=https://yt3.ggpht.com/tql8fK5S3O4w5ONQcdlOqYkpy_BKAq1wcTt7GilOGf3GpkhdeqIw5f55YI1ZDo_p5_DcoDyB1A=s48-c-k-c0x00ffffff-no-rj
 
 isim=Kurtlar Vadisi
