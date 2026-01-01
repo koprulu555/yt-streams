@@ -46,6 +46,12 @@ isim=Kral Şakir
 içerik=https://m.youtube.com/watch?v=5Whk9MVTpI4&pp=ygUTw4dpemdpIGZpbG0gY2FubMSxIA%3D%3D
 logo=https://yt3.ggpht.com/pdVy_rG78xQRFbsEJjBy2u3BfLE6oSDCKX9BBQBufV2KQVRYM70Tb5PZIB7s1oHdKbR7qPZcvA=s48-c-k-c0x00ffffff-no-rj
 
+isim=Selena
+içerik=https://m.youtube.com/watch?v=1lyLi6l74fs&pp=ygUUc2VsZW5hIGNhbmzEsSB5YXnEsW4%3D
+logo=https://yt3.ggpht.com/ytc/AIdro_kNsbnulP8chkQ8olu-OlJUU8sNxsEquVHcEJEXqx3V3_0=s48-c-k-c0x00ffffff-no-rj
+
+
+
 
 
 
