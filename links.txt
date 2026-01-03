@@ -27,11 +27,11 @@ içerik=https://m.youtube.com/watch?v=ztmY_cCtUl0&pp=ygURc8O2emPDvCB0diBjYW5sxLE
 logo=https://yt3.ggpht.com/_HznzWrS2cMaKa8Jp_uZhzWt7-25ijH7pZlXq45D9vapjDu5DRsh9uu0vfa2NH2Iayw5yxhaDQ=s48-c-k-c0x00ffffff-no-rj
 
 isim=Kurtlar Vadisi Pusu
-içerik=https://m.youtube.com/watch?v=Qxz5lwuleNA&pp=ygUba3VydGxhciB2YWRpc2kgcHVzdSBjYW5sxLEg
+içerik=https://m.youtube.com/watch?v=bUFgHO9ggU8&pp=ygUVa3VydGxhciB2YWRpc2kgY2FubMSx0gcJCU0KAYcqIYzv
 logo=https://yt3.ggpht.com/tql8fK5S3O4w5ONQcdlOqYkpy_BKAq1wcTt7GilOGf3GpkhdeqIw5f55YI1ZDo_p5_DcoDyB1A=s48-c-k-c0x00ffffff-no-rj
 
 isim=Kurtlar Vadisi
-içerik=https://m.youtube.com/watch?v=-eBbNc-ylYI&pp=ygUbS3VydGxhciB2YWRpc2kgcHVzdSBjYW5sxLEg
+içerik=https://m.youtube.com/watch?v=NzbEHkjHn6g&pp=ygUVa3VydGxhciB2YWRpc2kgY2FubMSx
 logo=https://yt3.ggpht.com/3pcRtdw7lKM3-d8rPyBn1mET0GTstFOx4EUqswlp4sGVFchaf31GXPcz3AjFgIssfvI-6Mgus-M=s48-c-k-c0x00ffffff-no-rj
 
 isim=E.D.H.O
